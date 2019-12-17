@@ -2,7 +2,7 @@
 
 import setting
 import tornado.options
-from urls import urls
+from route import urls
 from tornado.web import Application
 from tornado.httpserver import HTTPServer
 from tornado.ioloop import IOLoop

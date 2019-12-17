@@ -5,7 +5,11 @@ import os
 
 # mysql配置
 mysql_options = {
-
+    'host': "localhost",
+    'database': "tchat",
+    'user': "zhidu",
+    'password': "zhidu123456",
+    'charset': "utf8"
 }
 
 # app配置
