@@ -1,26 +1,31 @@
 # coding=utf-8
 
 import time
-from pymysql.cursors import DictCursor
-from db_class import DB
+import redis
+from setting import redis_options, redis_pool
+from tornado.gen import coroutine
 from tornado.web import RequestHandler
 
 
 class TestHandler(RequestHandler):
+    # @coroutine
     def get(self):
-        db_obj = DB()
-        db = db_obj.connect_db()
-        time.sleep(150)
-        print("------:", db.ping())
-        sql = "select * from userinfo;"
-        cursor = db.cursor(DictCursor)
-        cursor.execute(sql)
-        result = cursor.fetchone()
-        self.write(result)
-        db.close()
+        user_list = "userinfo"
+        try:
+            r = redis.Redis(
+                connection_pool=redis_pool,
+                # password=redis_options["password"],
+                decode_responses=True
+            )
+        except Exception as error:
+            self.write({"error": error})
+        user_count = r.llen(user_list)
+        userinfo_data = r.lrange(user_list, 0, user_count)
+        self.write(userinfo_data[0])
 
 
 class LoginHandler(RequestHandler):
+    @coroutine
     def get(self):
         self.render("login.html")
 
