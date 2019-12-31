@@ -5,7 +5,6 @@ from index import *
 
 
 urls = [
-    (r"/test", TestHandler),
     (r"/", IndexHandler),
     (r"/login", LoginHandler),
     (r"/register", RegisterHandler),

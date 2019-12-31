@@ -1,6 +1,6 @@
 # coding=utf-8
 
-import time
+# import time
 import json
 import redis
 from setting import redis_pool
@@ -8,32 +8,17 @@ from tornado.gen import coroutine
 from tornado.web import RequestHandler
 
 
-class TestHandler(RequestHandler):
-    @coroutine
-    def get(self):
-        user_list = "userinfo"
-        try:
-            r = redis.Redis(
-                connection_pool=redis_pool,
-                decode_responses=True
-            )
-        except Exception as error:
-            print("error:", error)
-            return self.write({"error": "this is error"})
-        user_count = r.llen(user_list)
-        userinfo_data = r.lrange(user_list, 0, user_count)
-        self.write(userinfo_data[0])
-
-
 class LoginHandler(RequestHandler):
     @coroutine
     def get(self):
         self.render("login.html")
+
     @coroutine
     def post(self):
         back_status = True
-        username = self.get_body_argument("username", default=None)
-        password = self.get_body_argument("password", default=None)
+        back_res = {"res": back_status}
+        username = self.get_body_argument("username", default="")
+        password = self.get_body_argument("password", default="")
 
         redis_userinfo_list = "userinfo"
         try:
@@ -43,19 +28,33 @@ class LoginHandler(RequestHandler):
             )
         except Exception as error:
             print(error)
+            back_res["res"] = False
+            return self.write(back_res)
         user_count = redis_conn.llen(redis_userinfo_list)
-
+        all_user_data = redis_conn.lrange(redis_userinfo_list, 0, user_count)
+        for tkey, tuser_data in enumerate(all_user_data):
+            user_data = json.loads(tuser_data)
+            if "@" in username:
+                if user_data["email"] == username and user_data["password"] == password:
+                    return self.write(back_res)
+            else:
+                if user_data["username"] == username and user_data["password"] == password:
+                    return self.write(back_res)
+            if tkey + 1 == user_count:
+                back_res['res'] = False
+                return self.write(back_res)
 
 
 class RegisterHandler(RequestHandler):
     def get(self):
         self.render("register.html")
+
     def post(self):
         back_status = True
-        username = self.get_body_argument("username", default=None)
-        nickname = self.get_body_argument("nickname", default=None)
-        email = self.get_body_argument("email", default=None)
-        password = self.get_body_argument("password", default=None)
+        username = self.get_body_argument("username", default="")
+        nickname = self.get_body_argument("nickname", default="")
+        email = self.get_body_argument("email", default="")
+        password = self.get_body_argument("password", default="")
 
         redis_userinfo_list = "userinfo"
         try:
@@ -69,7 +68,7 @@ class RegisterHandler(RequestHandler):
         user_count = redis_conn.llen(redis_userinfo_list)
         new_user = {
             "id": user_count + 1,
-            "user": username,
+            "username": username,
             "nickname": nickname,
             "email": email,
             "password": password
