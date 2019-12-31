@@ -61,22 +61,23 @@
 
     <!-- form -->
     <form>
+        {% module xsrf_form_html() %}
         <div class="form-group">
-            <input type="text" class="form-control" placeholder="Username or email" required autofocus>
+            <input type="text" class="form-control username" placeholder="Username or email" required autofocus>
         </div>
         <div class="form-group">
-            <input type="password" class="form-control" placeholder="Password" required>
+            <input type="password" class="form-control password" placeholder="Password" required>
         </div>
         <div class="form-group d-flex justify-content-between">
             <div class="custom-control custom-checkbox">
-                <input type="checkbox" class="custom-control-input" checked="" id="customCheck1">
+                <input type="checkbox" class="remember custom-control-input" checked="" id="customCheck1">
                 <label class="custom-control-label" for="customCheck1">Remember me</label>
             </div>
-            <a href="./reset-password.html">Reset password</a>
+            <a href="/resetpwd">Reset password</a>
         </div>
         <button class="btn btn-primary btn-block">Sign in</button>
         <hr>
-        <p class="text-muted">Login with your social media account.</p>
+        <!-- <p class="text-muted">Login with your social media account.</p>
         <ul class="list-inline">
             <li class="list-inline-item">
                 <a href="#" class="btn btn-floating btn-facebook">
@@ -114,9 +115,9 @@
                 </a>
             </li>
         </ul>
-        <hr>
+        <hr> -->
         <p class="text-muted">Don't have an account?</p>
-        <a href="./register.html" class="btn btn-outline-light btn-sm">Register now!</a>
+        <a href="/register" class="btn btn-outline-light btn-sm">Register now!</a>
     </form>
     <!-- ./ form -->
 
@@ -127,5 +128,34 @@
 
 <!-- App scripts -->
 <script src="/static/dist/js/app.min.js"></script>
+<script>
+    $(function() {
+        $(".btn-block").click(function() {
+            username = $(".username").val();
+            password = $(".password").val();
+            remember = $(".remember").prop("checked");
+            csrf = $('input[name="_xsrf"]').val();
+            $.ajax({
+                type: "POST",
+                url: "/login",
+                data: {
+                    "username": username,
+                    "password": password,
+                    "remember": remember,
+                    "_xsrf": csrf
+                },
+                success: function(res) {
+                    if(res.res) {
+                        alert("登录成功！");
+                        window.location.href = '/'
+                    } else {
+                        alert("登录失败！");
+                        // window.location.href = '/login'
+                    }
+                }
+            });
+        });
+    });
+</script>
 </body>
 </html>

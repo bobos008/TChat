@@ -24,7 +24,7 @@ settings = {
     'template_path': os.path.join(os.path.dirname(__file__), "template"),
     'static_path': os.path.join(os.path.dirname(__file__), "static"),
     'xsrf_cookies': True,
-    'cookie_secret': '8e1913e2-1fde-11ea-8edd-50e549bedfee',
+    'cookie_secret': 'wX8y3pkxSTak4R+v79jZiTZCYfFRL0gpoDDkYgkyJHk=',
     'login_url': '/login',
     'debug': True
 }

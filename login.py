@@ -19,6 +19,10 @@ class LoginHandler(RequestHandler):
         back_res = {"res": back_status}
         username = self.get_body_argument("username", default="")
         password = self.get_body_argument("password", default="")
+        csrf = self.get_body_argument("_xsrf", default="")
+        if not csrf:
+            back_res["res"] = False
+            return self.write(back_res)
 
         redis_userinfo_list = "userinfo"
         try:
@@ -39,6 +43,7 @@ class LoginHandler(RequestHandler):
                     return self.write(back_res)
             else:
                 if user_data["username"] == username and user_data["password"] == password:
+                    self.set_cookie("username", username, expires_days=1)
                     return self.write(back_res)
             if tkey + 1 == user_count:
                 back_res['res'] = False
