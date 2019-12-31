@@ -220,115 +220,7 @@
 </div>
 <!-- ./ new group modal -->
 
-<!-- setting modal -->
-<div class="modal fade" id="settingModal" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-dialog-zoom" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">
-                    <i data-feather="settings" class="mr-2"></i> Settings
-                </h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <i class="ti-close"></i>
-                </button>
-            </div>
-            <div class="modal-body">
-                <ul class="nav nav-tabs" role="tablist">
-                    <li class="nav-item">
-                        <a class="nav-link active" data-toggle="tab" href="#account" role="tab" aria-controls="account"
-                           aria-selected="true">Account</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-toggle="tab" href="#notification" role="tab"
-                           aria-controls="notification" aria-selected="false">Notification</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-toggle="tab" href="#contact" role="tab" aria-controls="contact"
-                           aria-selected="false">Security</a>
-                    </li>
-                </ul>
-                <div class="tab-content">
-                    <div class="tab-pane show active" id="account" role="tabpanel">
-                        <div class="form-item custom-control custom-switch">
-                            <input type="checkbox" class="custom-control-input" checked id="customSwitch1">
-                            <label class="custom-control-label" for="customSwitch1">Allow connected contacts</label>
-                        </div>
-                        <div class="form-item custom-control custom-switch">
-                            <input type="checkbox" class="custom-control-input" checked id="customSwitch2">
-                            <label class="custom-control-label" for="customSwitch2">Confirm message requests</label>
-                        </div>
-                        <div class="form-item custom-control custom-switch">
-                            <input type="checkbox" class="custom-control-input" checked id="customSwitch3">
-                            <label class="custom-control-label" for="customSwitch3">Profile privacy</label>
-                        </div>
-                        <div class="form-item custom-control custom-switch">
-                            <input type="checkbox" class="custom-control-input" id="customSwitch4">
-                            <label class="custom-control-label" for="customSwitch4">Developer mode options</label>
-                        </div>
-                        <div class="form-item custom-control custom-switch">
-                            <input type="checkbox" class="custom-control-input" checked id="customSwitch5">
-                            <label class="custom-control-label" for="customSwitch5">Two-step security
-                                verification</label>
-                        </div>
-                    </div>
-                    <div class="tab-pane" id="notification" role="tabpanel">
-                        <div class="form-item custom-control custom-switch">
-                            <input type="checkbox" class="custom-control-input" checked id="customSwitch6">
-                            <label class="custom-control-label" for="customSwitch6">Allow mobile notifications</label>
-                        </div>
-                        <div class="form-item custom-control custom-switch">
-                            <input type="checkbox" class="custom-control-input" id="customSwitch7">
-                            <label class="custom-control-label" for="customSwitch7">Notifications from your
-                                friends</label>
-                        </div>
-                        <div class="form-item custom-control custom-switch">
-                            <input type="checkbox" class="custom-control-input" id="customSwitch8">
-                            <label class="custom-control-label" for="customSwitch8">Send notifications by email</label>
-                        </div>
-                    </div>
-                    <div class="tab-pane" id="contact" role="tabpanel">
-                        <div class="form-item custom-control custom-switch">
-                            <input type="checkbox" class="custom-control-input" id="customSwitch9">
-                            <label class="custom-control-label" for="customSwitch9">Suggest changing passwords every
-                                month.</label>
-                        </div>
-                        <div class="form-item custom-control custom-switch">
-                            <input type="checkbox" class="custom-control-input" checked id="customSwitch10">
-                            <label class="custom-control-label" for="customSwitch10">Let me know about suspicious
-                                entries to your account</label>
-                        </div>
-                        <div class="form-item">
-                            <p>
-                                <a class="btn btn-light" data-toggle="collapse" href="#collapseExample" role="button"
-                                   aria-expanded="false"
-                                   aria-controls="collapseExample">
-                                    <i data-feather="plus" class="mr-2"></i> Security Questions
-                                </a>
-                            </p>
-                            <div class="collapse" id="collapseExample">
-                                <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Question 1">
-                                </div>
-                                <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Answer 1">
-                                </div>
-                                <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Question 2">
-                                </div>
-                                <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Answer 2">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary">Save</button>
-            </div>
-        </div>
-    </div>
-</div>
+
 <!-- ./ setting modal -->
 
 <!-- edit profile modal -->
@@ -352,10 +244,6 @@
                     <li class="nav-item">
                         <a class="nav-link" data-toggle="tab" href="#about" role="tab" aria-controls="about"
                            aria-selected="false">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-toggle="tab" href="#social-links" role="tab"
-                           aria-controls="social-links" aria-selected="false">Social Links</a>
                     </li>
                 </ul>
                 <div class="tab-content">
@@ -410,10 +298,6 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label for="website" class="col-form-label">Website</label>
-                                <input type="text" class="form-control" id="website" placeholder="https://">
-                            </div>
                         </form>
                     </div>
                     <div class="tab-pane" id="about" role="tabpanel">
@@ -429,90 +313,7 @@
                             </div>
                         </form>
                     </div>
-                    <div class="tab-pane" id="social-links" role="tabpanel">
-                        <form>
-                            <div class="form-group">
-                                <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="Username">
-                                    <div class="input-group-append">
-                                        <span class="input-group-text bg-facebook">
-                                            <i class="ti-facebook"></i>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="Username">
-                                    <div class="input-group-append">
-                                        <span class="input-group-text bg-twitter">
-                                            <i class="ti-twitter"></i>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="Username">
-                                    <div class="input-group-append">
-                                        <span class="input-group-text bg-instagram">
-                                            <i class="ti-instagram"></i>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="Username">
-                                    <div class="input-group-append">
-                                        <span class="input-group-text bg-linkedin">
-                                            <i class="ti-linkedin"></i>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="Username">
-                                    <div class="input-group-append">
-                                        <span class="input-group-text bg-dribbble">
-                                            <i class="ti-dribbble"></i>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="Username">
-                                    <div class="input-group-append">
-                                        <span class="input-group-text bg-youtube">
-                                            <i class="ti-youtube"></i>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="Username">
-                                    <div class="input-group-append">
-                                        <span class="input-group-text bg-google">
-                                            <i class="ti-google"></i>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="Username">
-                                    <div class="input-group-append">
-                                        <span class="input-group-text bg-whatsapp">
-                                            <i class="fa fa-whatsapp"></i>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
+                    
                 </div>
             </div>
             <div class="modal-footer">
@@ -1536,19 +1337,6 @@
                                 <i data-feather="video"></i>
                             </a>
                         </li>
-                        <li class="list-inline-item">
-                            <a href="#" class="btn btn-outline-light" data-toggle="dropdown">
-                                <i data-feather="more-horizontal"></i>
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-right">
-                                <a href="#" data-navigation-target="contact-information"
-                                   class="dropdown-item">Profile</a>
-                                <a href="#" class="dropdown-item">Add to archive</a>
-                                <a href="#" class="dropdown-item">Delete</a>
-                                <div class="dropdown-divider"></div>
-                                <a href="#" class="dropdown-item text-danger">Block</a>
-                            </div>
-                        </li>
                     </ul>
                 </div>
             </div>
@@ -1811,10 +1599,6 @@
                                     <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
                                        aria-controls="home" aria-selected="true">About</a>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab"
-                                       aria-controls="profile" aria-selected="false">Media</a>
-                                </li>
                             </ul>
                         </div>
                         <div class="tab-content" id="myTabContent">
@@ -1831,65 +1615,7 @@
                                     <h6>City</h6>
                                     <p class="text-muted">Germany / Berlin</p>
                                 </div>
-                                <div class="mt-4 mb-4">
-                                    <h6>Website</h6>
-                                    <p>
-                                        <a href="#">www.franshanscombe.com</a>
-                                    </p>
-                                </div>
-                                <div class="mt-4 mb-4">
-                                    <h6 class="mb-3">Social media accounts</h6>
-                                    <ul class="list-inline social-links">
-                                        <li class="list-inline-item">
-                                            <a href="#" class="btn btn-sm btn-floating btn-facebook"
-                                               data-toggle="tooltip" title="Facebook">
-                                                <i class="fa fa-facebook"></i>
-                                            </a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a href="#" class="btn btn-sm btn-floating btn-twitter"
-                                               data-toggle="tooltip" title="Twitter">
-                                                <i class="fa fa-twitter"></i>
-                                            </a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a href="#" class="btn btn-sm btn-floating btn-dribbble"
-                                               data-toggle="tooltip" title="Dribbble">
-                                                <i class="fa fa-dribbble"></i>
-                                            </a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a href="#" class="btn btn-sm btn-floating btn-whatsapp"
-                                               data-toggle="tooltip" title="Whatsapp">
-                                                <i class="fa fa-whatsapp"></i>
-                                            </a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a href="#" class="btn btn-sm btn-floating btn-linkedin"
-                                               data-toggle="tooltip" title="Linkedin">
-                                                <i class="fa fa-linkedin"></i>
-                                            </a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a href="#" class="btn btn-sm btn-floating btn-google" data-toggle="tooltip"
-                                               title="Google">
-                                                <i class="fa fa-google"></i>
-                                            </a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a href="#" class="btn btn-sm btn-floating btn-behance"
-                                               data-toggle="tooltip" title="Behance">
-                                                <i class="fa fa-behance"></i>
-                                            </a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a href="#" class="btn btn-sm btn-floating btn-instagram"
-                                               data-toggle="tooltip" title="Instagram">
-                                                <i class="fa fa-instagram"></i>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
+                                
                                 <div class="mt-4 mb-4">
                                     <h6 class="mb-3">Settings</h6>
                                     <div class="form-group">
@@ -1912,39 +1638,6 @@
                                                 notification</label>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                                <h6 class="mb-3 d-flex align-items-center justify-content-between">
-                                    <span>Recent Files</span>
-                                    <a href="#" class="btn btn-link small">
-                                        <i data-feather="upload" class="mr-2"></i> Upload
-                                    </a>
-                                </h6>
-                                <div>
-                                    <ul class="list-group list-group-flush">
-                                        <li class="list-group-item pl-0 pr-0 d-flex align-items-center">
-                                            <a href="#">
-                                                <i class="fa fa-file-pdf-o text-danger mr-2"></i> report4221.pdf
-                                            </a>
-                                        </li>
-                                        <li class="list-group-item pl-0 pr-0 d-flex align-items-center">
-                                            <a href="#">
-                                                <i class="fa fa-image text-muted mr-2"></i> avatar_image.png
-                                            </a>
-                                        </li>
-                                        <li class="list-group-item pl-0 pr-0 d-flex align-items-center">
-                                            <a href="#">
-                                                <i class="fa fa-file-excel-o text-success mr-2"></i>
-                                                excel_report_file2020.xlsx
-                                            </a>
-                                        </li>
-                                        <li class="list-group-item pl-0 pr-0 d-flex align-items-center">
-                                            <a href="#">
-                                                <i class="fa fa-file-text-o text-warning mr-2"></i> articles342133.txt
-                                            </a>
-                                        </li>
-                                    </ul>
                                 </div>
                             </div>
                         </div>
