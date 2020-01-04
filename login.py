@@ -36,6 +36,7 @@ class LoginHandler(RequestHandler):
             return self.write(back_res)
         user_count = redis_conn.llen(redis_userinfo_list)
         all_user_data = redis_conn.lrange(redis_userinfo_list, 0, user_count)
+        redis_conn.close()
         for tkey, tuser_data in enumerate(all_user_data):
             user_data = json.loads(tuser_data)
             if "@" in username:

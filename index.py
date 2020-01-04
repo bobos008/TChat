@@ -3,10 +3,12 @@
 import json
 import redis
 from tornado.web import RequestHandler
+from tornado.gen import coroutine
 from setting import redis_pool
 
 
 class IndexHandler(RequestHandler):
+    @coroutine
     def get(self):
         user_id = 1
         try:
@@ -37,4 +39,5 @@ class IndexHandler(RequestHandler):
             user_data = json.loads(tuser)
             if user_data["id"] in friends:
                 curr_user_friend.append(user_data)
+        redis_conn.close()
         return self.render("index.html", user_friend=curr_user_friend)
